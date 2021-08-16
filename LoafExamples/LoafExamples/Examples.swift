@@ -19,6 +19,7 @@ class Examples: UITableViewController {
         
         case bottom   = "This will be shown at the bottom of the view"
         case top      = "This will be shown at the top of the view"
+        case center   = "This will be shown at the center of the view"
         
         case vertical = "The loaf will be presented and dismissed vertically"
         case left     = "The loaf will be presented and dismissed from the left"
@@ -30,7 +31,7 @@ class Examples: UITableViewController {
         case custom3  = "This will showcase using no icon and 80% screen size width"
 		
         static let grouped: [[Example]] = [[.success, .error, .warning, .info],
-                                           [.bottom, .top],
+                                           [.bottom, .top, .center],
                                            [.vertical, .left, .right, .mix],
                                            [.custom1, .custom2, .custom3]]
     }
@@ -96,6 +97,8 @@ class Examples: UITableViewController {
             }
         case .top:
             Loaf(example.rawValue, location: .top, sender: self).show()
+        case .center:
+            Loaf(example.rawValue, location: .center, sender: self).show()
             
         case .vertical:
             Loaf(example.rawValue, sender: self).show(.short)

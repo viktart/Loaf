@@ -57,6 +57,8 @@ final class Controller: UIPresentationController {
             yPosition = containerView.frame.origin.y + containerView.frame.height - size.height - containerInsets.bottom
         case .top:
             yPosition = containerInsets.top
+        case .center:
+            yPosition = containerView.center.y - size.height / 2
         }
         
         containerView.frame.origin = CGPoint(
@@ -81,6 +83,8 @@ final class Controller: UIPresentationController {
             yPosition = containerView.bounds.height - containerSize.height
         case .top:
             yPosition = 0
+        case .center:
+            yPosition = (containerView.bounds.height - containerSize.height) / 2
         }
         
         let toastSize = CGRect(x: containerView.center.x - (containerSize.width / 2),
